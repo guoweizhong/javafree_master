@@ -1,0 +1,2 @@
+Ext.define("Ext.data.session.ChildChangesVisitor",{extend:"Ext.data.session.ChangesVisitor",constructor:function(){this.seen={};this.callParent(arguments);},setupOptions:function(a){this.callParent([a]);a.serialize=false;},onDirtyRecord:function(a){if(this.callParent(arguments)!==false){if(!a.$source&&(a.dropped||!a.phantom)){this.readEntity(a);
+}}},readEntity:function(f){var g=this,e=g.readKey,b=f.entityName,c=f.id,a=g.seen,h=b+c,i,d;if(a[h]){return;}a[h]=true;i=g.result||(g.result={});d=i[b]||(i[b]={});d=d[e]||(d[e]=[]);d.push(Ext.apply({},f.modified,f.data));}});

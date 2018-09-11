@@ -1,0 +1,2 @@
+Ext.define("Ext.app.domain.Store",{extend:"Ext.app.EventDomain",singleton:true,requires:["Ext.data.AbstractStore"],type:"store",prefix:"store.",idMatchRe:/^\#/,constructor:function(){var a=this;a.callParent();a.monitor(Ext.data.AbstractStore);},match:function(d,b){var a=false,c=d.alias;if(b==="*"){a=true;
+}else{if(this.idMatchRe.test(b)){a=d.getStoreId()===b.substring(1);}else{if(c){a=Ext.Array.indexOf(c,this.prefix+b)>-1;}}}return a;}});

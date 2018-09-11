@@ -1,0 +1,1 @@
+Ext.define("Ext.mixin.StyleCacher",{extend:"Ext.Mixin",mixinConfig:{id:"stylecacher"},getCachedStyle:function(c,b){var a=this.$styleCache;if(!a){a=this.$styleCache={};}if(!(b in a)){a[b]=Ext.fly(c).getStyle(b);}return a[b];}});

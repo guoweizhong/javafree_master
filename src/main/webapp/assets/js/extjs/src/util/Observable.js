@@ -1,0 +1,1 @@
+Ext.define("Ext.util.Observable",{extend:"Ext.mixin.Observable",$applyConfigs:true},function(a){var b=Ext.mixin.Observable;a.releaseCapture=b.releaseCapture;a.capture=b.capture;a.captureArgs=b.captureArgs;a.observe=a.observeClass=b.observe;});

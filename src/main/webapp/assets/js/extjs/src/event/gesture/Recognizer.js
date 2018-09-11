@@ -1,0 +1,3 @@
+Ext.define("Ext.event.gesture.Recognizer",{requires:["Ext.event.publisher.Gesture"],mixins:["Ext.mixin.Identifiable"],priority:0,handledEvents:[],isStarted:false,config:{onRecognized:Ext.emptyFn,callbackScope:null},constructor:function(a){this.initConfig(a);Ext.event.publisher.Gesture.instance.registerRecognizer(this);
+},onStart:Ext.emptyFn,onEnd:Ext.emptyFn,onTouchStart:Ext.emptyFn,onTouchMove:Ext.emptyFn,onTouchEnd:function(){return this.reset();},onTouchCancel:function(a){return this.cancel(a);},fire:function(a,d,c,b){this.getOnRecognized().call(this.getCallbackScope(),this,a,d,c,b);},cancel:function(a){if(this.isStarted){this.onCancel(a);
+}return this.reset();},onCancel:Ext.emptyFn,reset:function(){this.isStarted=false;return false;}});

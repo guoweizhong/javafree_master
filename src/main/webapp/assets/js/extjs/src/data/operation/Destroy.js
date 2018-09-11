@@ -1,0 +1,2 @@
+Ext.define("Ext.data.operation.Destroy",{extend:"Ext.data.operation.Operation",alias:"data.operation.destroy",action:"destroy",isDestroyOperation:true,order:30,foreignKeyDirection:-1,doProcess:function(){var c=this.getRecords(),a=c.length,b;for(b=0;b<a;++b){c[b].setErased();}},doExecute:function(){return this.getProxy().erase(this);
+},getRecordData:function(a,c){var e={},d=a.idField,b=this.getNameProperty()||"name";e[d[b]]=a.id;return e;}});

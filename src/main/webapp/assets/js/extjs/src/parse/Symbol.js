@@ -1,0 +1,3 @@
+Ext.define("Ext.parse.Symbol",{priority:0,constructor:function(d,a){var b=this,c=b.defaultProperty;if(a&&typeof a==="object"){Ext.apply(b,a);}else{if(a!==undefined&&c){b[c]=a;}}b.id=d;},dump:function(){var c=this,a={at:c.at,arity:c.arity},b;if("value" in c){a.value=c.value;}if(c.lhs){a.lhs=c.lhs.dump();
+a.rhs=c.rhs.dump();}if(c.operand){a.operand=c.operand.dump();}if(c.args){a.args=[];for(b=0;b<c.args.length;++b){a.args.push(c.args[b].dump());}}return a;},led:function(){this.parser.syntaxError(this.at,"Missing operator");},nud:function(){this.parser.syntaxError(this.at,"Undefined");},update:function(b){if(b&&typeof b==="object"){var d=this,c=b.priority,e=b.led,a=b.nud;
+if(d.priority<=c){d.priority=c;}if(e){d.led=e;}if(a){d.nud=a;}}}});

@@ -1,0 +1,2 @@
+Ext.define("Ext.data.ModelManager",{alternateClassName:"Ext.ModelMgr",requires:["Ext.data.schema.Schema"],singleton:true,deprecated:{5:{methods:{clear:null,create:function(c,b,d){var a=b;if(!a.isEntity){a=this.getModel(b||c.name);}return a.createWithId(d,c);},each:function(b,a){Ext.data.Model.schema.eachEntity(b,a);
+},get:function(a){return this.getModel(a);},getCount:function(){return Ext.data.Model.schema.entityCount;},getModel:function(a){return Ext.data.schema.Schema.lookupEntity(a);},isRegistered:function(a){return !!this.getModel(a);}}}}});

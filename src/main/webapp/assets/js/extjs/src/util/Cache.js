@@ -1,0 +1,2 @@
+(function(b,a,c){Ext.util.Cache=c=function(d){b.call(this,d);};a.prototype=b.prototype;c.prototype=Ext.apply(new a(),{maxSize:100,clear:function(){b.prototype.clear.call(this,this.evict);},get:function(d){var f=this,e=f.map[d],g;if(e){g=e.value;f.touch(d);}else{g=f.miss.apply(f,arguments);f.add(d,g);
+f.trim(f.maxSize,f.evict);}return g;},evict:Ext.emptyFn});}(Ext.util.LRU,function(){}));

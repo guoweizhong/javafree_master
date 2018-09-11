@@ -1,0 +1,2 @@
+Ext.define("Ext.data.schema.Association",{requires:["Ext.data.schema.Role"],isOneToOne:false,isManyToOne:false,isManyToMany:false,owner:null,field:null,constructor:function(a){var c=this,d,b;Ext.apply(c,a);c.left=d=new c.Left(c,c.left);c.right=b=new c.Right(c,c.right);d.inverse=b;b.inverse=d;},hasField:function(){return !!this.field;
+},getFieldName:function(){var a=this.field;return a?a.name:"";}});

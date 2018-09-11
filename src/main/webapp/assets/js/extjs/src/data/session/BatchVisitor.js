@@ -1,0 +1,3 @@
+Ext.define("Ext.data.session.BatchVisitor",{map:null,constructor:function(a){this.batch=a;},getBatch:function(j){var a=this.map,k=this.batch,c,g,b,f,l,n,d,e,m,h;if(a){if(!k){k=new Ext.data.Batch();}for(b in a){c=a[b];g=c.entity;n=g.getProxy();d=n.getBatchActions();delete c.entity;for(l in c){if(d){f=n.createOperation(l,{records:c[l]});
+f.entityType=g;k.add(f);}else{e=c[l];for(h=0,m=e.length;h<m;++h){f=n.createOperation(l,{records:e[h]});f.entityType=g;k.add(f);}}}}}if(k&&j!==false){k.sort();}return k;},onDirtyRecord:function(a){var d=this,b=a.phantom?"create":(a.dropped?"destroy":"update"),c=a.$className,e=(d.map||(d.map={})),f=(e[c]||(e[c]={entity:a.self}));
+f=f[b]||(f[b]=[]);f.push(a);}});

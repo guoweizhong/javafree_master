@@ -1,0 +1,3 @@
+Ext.define("Ext.data.SortTypes",function(){var a;return{singleton:true,constructor:function(){a=this;},none:Ext.identityFn,stripCommasRe:/,/g,stripTagsRE:/<\/?[^>]+>/gi,asText:function(b){return(b!=null)?String(b).replace(a.stripTagsRE,""):"\u0000";},asUCText:function(b){return(b!=null)?String(b).toUpperCase().replace(a.stripTagsRE,""):"\u0000";
+},asUCString:function(b){return(b!=null)?String(b).toUpperCase():"\u0000";},asDate:function(b){if(!b){return 0;}if(Ext.isDate(b)){return b.getTime();}return Date.parse(String(b));},asFloat:function(b){var c=parseFloat(String(b).replace(a.stripCommasRe,""));return isNaN(c)?0:c;},asInt:function(b){var c=parseInt(String(b).replace(a.stripCommasRe,""),10);
+return isNaN(c)?0:c;}};});

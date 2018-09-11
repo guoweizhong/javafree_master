@@ -1,0 +1,1 @@
+Ext.define("Ext.data.validator.Time",{extend:"Ext.data.validator.AbstractDate",alias:"data.validator.time",type:"time",message:"Is not a valid time",privates:{getDefaultFormat:function(){return Ext.Date.defaultTimeFormat;}}});

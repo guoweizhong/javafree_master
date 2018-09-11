@@ -1,0 +1,3 @@
+Ext.define("Ext.fx.animation.Flip",{extend:"Ext.fx.animation.Abstract",alias:"animation.flip",config:{easing:"ease-in",direction:"right",half:false,out:null},getData:function(){var g=this,i=g.getFrom(),j=g.getTo(),h=g.getDirection(),b=g.getOut(),m=g.getHalf(),c=m?90:180,e=1,a=1,l=0,k=0,f=0,d=0;if(b){a=0.8;
+}else{e=0.8;}switch(h){case this.DIRECTION_UP:case this.DIRECTION_TOP:if(b){f=c;}else{l=-c;}break;case this.DIRECTION_DOWN:case this.DIRECTION_BOTTOM:if(b){f=-c;}else{l=c;}break;case this.DIRECTION_RIGHT:if(b){d=c;}else{k=-c;}break;case this.DIRECTION_LEFT:if(b){d=-c;}else{k=c;}break;}i.setTransform({rotateX:l,rotateY:k,scale:e});
+j.setTransform({rotateX:f,rotateY:d,scale:a});return this.callParent();}});

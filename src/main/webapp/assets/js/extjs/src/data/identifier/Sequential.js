@@ -1,0 +1,1 @@
+Ext.define("Ext.data.identifier.Sequential",{extend:"Ext.data.identifier.Generator",alias:"data.identifier.sequential",config:{increment:1,prefix:null,seed:1},generate:function(){var b=this,a=b._seed,c=b._prefix;b._seed+=b._increment;return(c!==null)?c+a:a;}});

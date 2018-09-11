@@ -1,0 +1,2 @@
+Ext.define("Ext.util.translatable.CssPosition",{extend:"Ext.util.translatable.Dom",alias:"translatable.cssposition",doTranslate:function(a,c){var b=this.getElement().dom.style;if(typeof a==="number"){b.left=a+"px";}if(typeof c==="number"){b.top=c+"px";}this.callParent([a,c]);},syncPosition:function(){var a=this.getElement().dom.style;
+return[this.x=parseFloat(a.left),this.y=parseFloat(a.top)];},destroy:function(){var a=this.getElement().dom.style;a.left=null;a.top=null;this.callParent();}});

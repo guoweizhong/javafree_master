@@ -1,0 +1,2 @@
+Ext.define("Ext.data.Group",{extend:"Ext.util.Group",store:null,getSummaryRecord:function(){var d=this,c=d.summaryRecord,a=d.store,e=a.getData().generation,f,b;if(!c){f=a.getModel();b=f.getSummaryModel();d.summaryRecord=c=new b();}if(!c.isRemote&&c.summaryGeneration!==e){c.calculateSummary(d.items);c.summaryGeneration=e;
+}return c;}});

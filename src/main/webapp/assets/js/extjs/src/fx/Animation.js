@@ -1,0 +1,2 @@
+Ext.define("Ext.fx.Animation",{requires:["Ext.fx.animation.Slide","Ext.fx.animation.SlideOut","Ext.fx.animation.Fade","Ext.fx.animation.FadeOut","Ext.fx.animation.Flip","Ext.fx.animation.Pop","Ext.fx.animation.PopOut"],constructor:function(b){var a=Ext.fx.animation.Abstract,c;if(typeof b=="string"){c=b;
+b={};}else{if(b&&b.type){c=b.type;}}if(c){a=Ext.ClassManager.getByAlias("animation."+c);if(!a){Ext.Logger.error("Invalid animation type of: '"+c+"'");}}return Ext.factory(b,a);}});

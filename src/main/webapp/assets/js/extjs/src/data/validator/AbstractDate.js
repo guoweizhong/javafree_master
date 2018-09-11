@@ -1,0 +1,2 @@
+Ext.define("Ext.data.validator.AbstractDate",{extend:"Ext.data.validator.Validator",config:{message:null,format:undefined},applyFormat:function(a){if(!a){a=this.getDefaultFormat();}if(!Ext.isArray(a)){a=[a];}return a;},validate:function(c){var d=this.getFormat(),a=d.length,b;for(b=0;b<a;++b){if(Ext.Date.parse(c,d[b],true)){return true;
+}}return this.getMessage();},privates:{getDefaultFormat:Ext.privateFn}});

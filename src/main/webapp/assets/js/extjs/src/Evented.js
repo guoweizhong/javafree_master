@@ -1,0 +1,2 @@
+Ext.define("Ext.Evented",{alternateClassName:"Ext.EventedBase",mixins:["Ext.mixin.Observable"],initialized:false,constructor:function(a){this.callParent();this.mixins.observable.constructor.call(this,a);this.initialized=true;},onClassExtended:function(b,e){if(!e.hasOwnProperty("eventedConfig")){return;
+}var d=e.config,f=e.eventedConfig,c,a;if(d){Ext.applyIf(d,f);}else{b.addConfig(f);}for(c in f){if(f.hasOwnProperty(c)){a=Ext.Config.get(c);e[a.names.set]=a.eventedSetter||a.getEventedSetter();}}}});

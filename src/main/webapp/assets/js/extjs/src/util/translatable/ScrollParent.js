@@ -1,0 +1,2 @@
+Ext.define("Ext.util.translatable.ScrollParent",{extend:"Ext.util.translatable.Dom",alias:"translatable.scrollparent",isScrollParent:true,applyElement:function(a){var b=Ext.get(a);if(b){this.parent=b.parent();}return b;},doTranslate:function(a,c){var b=this.parent;b.setScrollLeft(Math.round(-a));b.setScrollTop(Math.round(-c));
+this.callParent([a,c]);},getPosition:function(){var c=this,a=c.position,b=c.parent;a.x=b.getScrollLeft();a.y=b.getScrollTop();return a;}});

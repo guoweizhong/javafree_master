@@ -1,0 +1,3 @@
+Ext.define("Ext.util.translatable.ScrollPosition",{extend:"Ext.util.translatable.Dom",alias:"translatable.scrollposition",constructor:function(a){if(a&&a.element){this.x=a.element.getScrollLeft();this.y=a.element.getScrollTop();}this.callParent([a]);},translateAnimated:function(){var a=this.getElement();
+this.x=a.getScrollLeft();this.y=a.getScrollTop();this.callParent(arguments);},doTranslate:function(a,c){var b=this.getElement();b.setScrollLeft(Math.round(a));b.setScrollTop(Math.round(c));},getPosition:function(){var c=this,a=c.position,b=c.getElement();a.x=b.getScrollLeft();a.y=b.getScrollTop();return a;
+}});

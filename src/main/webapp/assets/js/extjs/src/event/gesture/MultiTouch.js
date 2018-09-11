@@ -1,0 +1,2 @@
+Ext.define("Ext.event.gesture.MultiTouch",{extend:"Ext.event.gesture.Recognizer",requiredTouchesCount:2,isTracking:false,isMultiTouch:true,onTouchStart:function(f){var b=this,a=b.requiredTouchesCount,d=f.touches,c=d.length;if(c===a){b.isTracking=true;}else{if(c>a){return b.cancel(f);}}},reset:function(){this.isTracking=false;
+return this.callParent();}});

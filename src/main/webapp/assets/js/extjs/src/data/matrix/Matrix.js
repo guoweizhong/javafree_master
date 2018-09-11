@@ -1,0 +1,3 @@
+Ext.define("Ext.data.matrix.Matrix",{requires:["Ext.data.matrix.Side"],constructor:function(g,c){var e=this,b=c.isManyToMany?c:g.getSchema().getAssociation(c),a=Ext.data.matrix.Side,f=new a(e,0,b.left),d=new a(e,1,b.right);Ext.Assert.truthy(b.isManyToMany,"Association is not many-to-many");e.association=b;
+e.session=g;e.left=f;e.right=d;f.inverse=d;d.inverse=f;},commit:function(){this.left.commit();this.right.commit();},update:function(b,a,c){return this.left.update(b,a,c);},updateId:function(a,g,c){var b=a.self,f=this.left,d=this.right,e;if(b===f.role.cls){e=f;}if(b===d.role.cls){e=d;}if(e){e.updateId(g,c);
+}},destroy:function(){var a=this;a.left.destroy();a.right.destroy();a.association=a.session=a.left=a.right=null;a.callParent();}});

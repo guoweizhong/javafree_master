@@ -1,0 +1,2 @@
+Ext.define("Ext.data.virtual.Group",{isVirtualGroup:true,firstRecords:null,id:"",summaryRecord:null,constructor:function(a){this.id=a;this.firstRecords=[];},first:function(){return this.firstRecords[0]||null;},getGroupKey:function(){return this.id;},getSummaryRecord:function(){return this.summaryRecord;
+}});

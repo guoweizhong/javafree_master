@@ -1,0 +1,3 @@
+Ext.define("Ext.ux.colorpick.Selection",{mixinId:"colorselection",config:{format:"hex6",value:"FF0000",color:null,previousColor:null},applyColor:function(a){var b=a;if(Ext.isString(b)){b=Ext.ux.colorpick.ColorUtils.parseColor(a);}return b;},applyValue:function(a){var b=Ext.ux.colorpick.ColorUtils.parseColor(a||"#000000");
+return this.formatColor(b);},formatColor:function(a){return Ext.ux.colorpick.ColorUtils.formats[this.getFormat()](a);},updateColor:function(a){var b=this;if(!b.syncing){b.syncing=true;b.setValue(b.formatColor(a));b.syncing=false;}},updateValue:function(c,a){var b=this;if(!b.syncing){b.syncing=true;b.setColor(c);
+b.syncing=false;}this.fireEvent("change",b,c,a);}});

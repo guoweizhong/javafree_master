@@ -1,0 +1,3 @@
+Ext.define("Ext.util.Schedulable",{"abstract":true,isSchedulable:true,scheduled:false,constructor:function(){this.getScheduler().add(this);},destroy:function(){var b=this,a=b.getScheduler();if(a&&!a.destroyed){a.remove(b);}b.scheduler=null;b.schedule=b.react=Ext.emptyFn;b.callParent();},getFullName:function(){return this.name||this.id;
+},privates:{getScheduler:function(){return this.scheduler;},schedule:function(){var b=this,a;if(!b.scheduled){a=b.getScheduler();if(a){b.scheduled=true;if(b.onSchedule){b.onSchedule();}a.scheduleItem(b);}}},unschedule:function(){var b=this,a;if(b.scheduled){a=b.getScheduler();if(a&&!a.destroyed){a.unscheduleItem(b);
+}b.scheduled=false;}},sort:function(){}}});

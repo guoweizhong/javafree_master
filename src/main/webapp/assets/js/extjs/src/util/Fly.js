@@ -1,0 +1,2 @@
+Ext.define("Ext.util.Fly",{inheritableStatics:{flyPoolSize:2,fly:function(){var c=this,b=c.flyweights||(c.flyweights=[]),a=b.length?b.pop():new c();a.reset.apply(a,arguments);return a;}},release:function(){var c=this,b=c.self,a=b.flyweights||(b.flyweights=[]);c.reset();if(a.length<b.flyPoolSize){a.push(c);
+}},reset:Ext.emptyFn});

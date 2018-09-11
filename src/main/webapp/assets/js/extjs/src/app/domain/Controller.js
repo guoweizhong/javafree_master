@@ -1,0 +1,2 @@
+Ext.define("Ext.app.domain.Controller",{extend:"Ext.app.EventDomain",singleton:true,requires:["Ext.app.Controller"],type:"controller",prefix:"controller.",idMatchRe:/^\#/,constructor:function(){var a=this;a.callParent();a.monitor(Ext.app.BaseController);},match:function(d,b){var a=false,c=d.alias;if(b==="*"){a=true;
+}else{if(b==="#"){a=!!d.isApplication;}else{if(this.idMatchRe.test(b)){a=d.getId()===b.substring(1);}else{if(c){a=Ext.Array.indexOf(c,this.prefix+b)>-1;}}}}return a;}});

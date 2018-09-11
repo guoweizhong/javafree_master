@@ -1,0 +1,1 @@
+Ext.define("Ext.data.summary.Min",{extend:"Ext.data.summary.Base",alias:"data.summary.min",calculate:function(d,h,b,g,a){var f=this.extractValue(d[g],h,b),e,c;for(e=g;e<a;++e){c=this.extractValue(d[e],h,b);if(c<f){f=c;}}return f;}});

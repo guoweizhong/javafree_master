@@ -1,0 +1,1 @@
+Ext.define("Ext.data.validator.Phone",{extend:"Ext.data.validator.Format",alias:"data.validator.phone",type:"phone",message:"Is not a valid phone number",matcher:new RegExp("^ *"+"(?:"+"\\+?"+"(\\d{1,3})"+"[- .]?"+")?"+"(?:"+"(?:"+"(\\d{3})"+"|"+"\\((\\d{3})\\)"+")?"+"[- .]?"+")"+"(?:"+"([2-9]\\d{2})"+"[- .]?"+")"+"(\\d{4})"+"(?: *(?:e?xt?) *(\\d*))?"+" *$")});

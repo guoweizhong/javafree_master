@@ -1,0 +1,3 @@
+function loadJS(b,h){h=h||function(){};var g=0,e=0;var d;var f=typeof b=="string"?[b]:b;e=f.length;for(d=0;d<e;d++){var a=document.getElementsByTagName("body")[0];var c=document.createElement("script");c.type="text/javascript";c.async=false;c.src=b[d];g+=1;if(g==e){if(h){c.onreadystatechange=c.onload=function(){h();
+};}}a.appendChild(c);}}function loadCSS(a,h){h=h||function(){};var g=0,d=0;var f=document;var b=f.head||f.getElementsByTagName("head")[0]||f.documentElement;var e=typeof a=="string"?[a]:a;d=e.length;for(i=0;i<d;i++){var c=null,c=document.createElement("link");c.setAttribute("rel","stylesheet");c.setAttribute("type","text/css");
+c.setAttribute("href",e[i]);c.onload=function(){g+=1;if(g==d){h();}};b.appendChild(c);}}

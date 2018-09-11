@@ -1,0 +1,1 @@
+Ext.define("Ext.event.gesture.SingleTouch",{extend:"Ext.event.gesture.Recognizer",isSingleTouch:true,onTouchStart:function(a){if(a.touches.length>1){return this.cancel(a);}}});

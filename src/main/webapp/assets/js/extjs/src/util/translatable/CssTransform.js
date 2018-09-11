@@ -1,0 +1,2 @@
+Ext.define("Ext.util.translatable.CssTransform",{extend:"Ext.util.translatable.Dom",alias:"translatable.csstransform",isCssTransform:true,posRegex:/(\d+)px[^\d]*(\d+)px/,doTranslate:function(a,d){var c=this,b=c.getElement();if(!c.destroyed&&!b.destroyed){b.translate(a,d);}c.callParent([a,d]);},syncPosition:function(){var a=this.posRegex.exec(this.getElement().dom.style.tranform);
+if(a){this.x=parseFloat(a[1]);this.y=parseFloat(a[2]);}return[this.x,this.y];},destroy:function(){var a=this.getElement();if(a&&!a.destroyed){a.dom.style.webkitTransform=null;}this.callParent();}});

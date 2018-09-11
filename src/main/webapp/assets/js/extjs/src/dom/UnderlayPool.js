@@ -1,0 +1,2 @@
+Ext.define("Ext.dom.UnderlayPool",{constructor:function(a){this.elementConfig=a;this.cache=[];},checkOut:function(){var a=this.cache.shift();if(!a){a=Ext.Element.create(this.elementConfig);a.setVisibilityMode(2);a.dom.setAttribute("data-sticky",true);}return a;},checkIn:function(a){this.cache.push(a);
+Ext.getDetachedBody().dom.appendChild(a.dom);},reset:function(){var a=this.cache,b=a.length;while(b--){a[b].destroy();}this.cache=[];}});

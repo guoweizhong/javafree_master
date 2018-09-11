@@ -1,0 +1,4 @@
+Ext.define("Ext.ux.colorpick.SliderController",{extend:"Ext.app.ViewController",alias:"controller.colorpick-slidercontroller",boxReady:function(d){var e=this,c=e.getDragContainer(),b=e.getDragHandle(),a=b.dd;a.constrain=true;a.constrainTo=c.getEl();a.initialConstrainTo=a.constrainTo;a.on("drag",e.onHandleDrag,e);
+},getDragHandle:function(){return this.view.lookupReference("dragHandle");},getDragContainer:function(){return this.view.lookupReference("dragHandleContainer");},onHandleDrag:function(d){var g=this,i=g.getView(),a=g.getDragContainer(),f=g.getDragHandle(),h=f.getY()-a.getY(),c=a.getEl(),j=c.getHeight(),b=h/j;
+if(b>0.99){b=1;}i.fireEvent("handledrag",b);},onMouseDown:function(c){var b=this,a=b.getDragHandle(),d=c.getY();a.setY(d);b.onHandleDrag();a.el.repaint();a.dd.onMouseDown(c,a.dd.el);},onDragStart:function(c){var b=this,a=b.getDragHandle();a.dd.onDragStart(c,a.dd.el);},onMouseUp:function(){var a=this.getDragHandle();
+a.dd.dragEnded=true;}});

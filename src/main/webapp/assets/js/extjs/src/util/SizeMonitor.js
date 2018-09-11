@@ -1,0 +1,1 @@
+Ext.define("Ext.util.SizeMonitor",{requires:["Ext.util.sizemonitor.Scroll"],constructor:function(a){return new Ext.util.sizemonitor.Scroll(a);}});

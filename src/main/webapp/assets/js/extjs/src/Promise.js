@@ -1,0 +1,3 @@
+Ext.define("Ext.Promise",function(){var a;return{requires:["Ext.promise.Promise"],statics:{_ready:function(){a=Ext.promise.Promise;},all:function(){return a.all.apply(a,arguments);},race:function(){return a.race.apply(a,arguments);},reject:function(c){var b=new Ext.promise.Deferred();b.reject(c);return b.promise;
+},resolve:function(c){var b=new Ext.promise.Deferred();b.resolve(c);return b.promise;}},constructor:function(c){var b=new Ext.promise.Deferred();c(b.resolve.bind(b),b.reject.bind(b));return b.promise;}};},function(a){var b=Ext.global.Promise;if(b&&b.resolve&&!Ext.useExtPromises){Ext.Promise=b;}else{a._ready();
+}});

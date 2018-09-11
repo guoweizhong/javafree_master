@@ -1,0 +1,1 @@
+<%@ page contentType="text/html; charset=UTF-8" %><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><%@ taglib uri="http://www.javafree.com/menutag" prefix="jfmenu" %><% // 主菜单所用数据名称 // mainmenu 与menu.xml 配置对应 %><jfmenu:displayerName name="BootstrapMainMenu" permissions="AuthorityDefaultAdapter"><jfmenu:menu name="mainmenu"></jfmenu:menu></jfmenu:displayerName>

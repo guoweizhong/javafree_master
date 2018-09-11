@@ -1,0 +1,1 @@
+Ext.define("Ext.drag.proxy.Original",{extend:"Ext.drag.proxy.None",alias:"drag.proxy.original",getElement:function(a){return a.source.getElement();},getPositionable:function(b){var a=b.source;return a.getComponent()||a.getElement();}});

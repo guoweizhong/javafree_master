@@ -1,0 +1,1 @@
+Ext.define("Ext.data.summary.Max",{extend:"Ext.data.summary.Base",alias:"data.summary.max",calculate:function(e,h,c,g,b){var a=this.extractValue(e[g],h,c),f,d;for(f=g;f<b;++f){d=this.extractValue(e[f],h,c);if(d>a){a=d;}}return a;}});

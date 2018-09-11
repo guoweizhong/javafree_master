@@ -1,0 +1,1 @@
+Ext.define("Ext.parse.symbol.Prefix",{extend:"Ext.parse.Symbol",arity:"unary",isUnary:true,priority:70,nud:function(){var a=this;a.operand=a.parser.parseExpression(a.priority);a.arity="unary";a.isUnary=true;return a;}});

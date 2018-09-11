@@ -1,0 +1,1 @@
+Ext.define("Ext.data.summary.Average",{extend:"Ext.data.summary.Sum",alias:"data.summary.average",calculate:function(d,g,c,e,b){var a=b-e,f;if(a>0){f=this.callParent([d,g,c,e,b])/a;}return f;}});

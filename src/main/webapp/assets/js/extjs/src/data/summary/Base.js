@@ -1,0 +1,2 @@
+Ext.define("Ext.data.summary.Base",{mixins:["Ext.mixin.Factoryable"],alias:"data.summary.base",isAggregator:true,factoryConfig:{defaultType:"base",cacheable:true},constructor:function(a){var b=a&&a.calculate;if(b){a=Ext.apply({},a);delete a.calculate;this.calculate=b;}this.initConfig(a);},extractValue:function(b,d,a){var c;
+if(b){if(a){b=b[a];}c=b[d];}return c;}},function(){Ext.Factory.on("dataSummary",function(a,b){if(typeof b==="function"){return a({calculate:b});}});});

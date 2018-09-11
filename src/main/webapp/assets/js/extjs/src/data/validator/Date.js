@@ -1,0 +1,1 @@
+Ext.define("Ext.data.validator.Date",{extend:"Ext.data.validator.AbstractDate",alias:"data.validator.date",type:"date",message:"Is not a valid date",privates:{getDefaultFormat:function(){return Ext.Date.defaultFormat;}}});

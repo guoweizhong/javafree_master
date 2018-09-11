@@ -1,0 +1,2 @@
+Ext.define("Ext.list.RootTreeItem",{extend:"Ext.list.AbstractTreeItem",isRootListItem:true,element:{reference:"element",tag:"ul",cls:Ext.baseCSSPrefix+"treelist-root-container"},insertItem:function(b,a){if(a){b.element.insertBefore(a.element);}else{this.element.appendChild(b.element);}},isToggleEvent:function(a){return false;
+}});

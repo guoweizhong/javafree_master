@@ -1,0 +1,3 @@
+Ext.define("Ext.Glyph",{isGlyph:true,constructor:function(a){a&&this.setGlyph(a);},setGlyph:function(b){var a;this.glyphConfig=b;if(typeof b==="string"){a=b.split("@");if(isNaN(b=isNaN(a[0])?parseInt("0"+a[0],16):parseInt(a[0],10))||!b){b=a[0].charCodeAt(0);}this.fontFamily=a[1]||Ext._glyphFontFamily;
+}else{this.fontFamily=Ext._glyphFontFamily;}this.codepoint=b;this.character=Ext.String.fromCodePoint(this.codepoint);return this;},getStyle:function(){return{"font-family":this.fontFamily};},isEqual:function(a){return a&&a.isGlyph&&a.codepoint===this.codepoint&&a.fontFamily===this.fontFamily;},statics:(function(){var a;
+return{fly:function(b){return b.isGlyph?b:(a||(a=new Ext.Glyph())).setGlyph(b);}};})()});

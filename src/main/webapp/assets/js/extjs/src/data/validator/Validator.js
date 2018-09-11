@@ -1,0 +1,3 @@
+Ext.define("Ext.data.validator.Validator",{mixins:["Ext.mixin.Factoryable"],alias:"data.validator.base",isValidator:true,factoryConfig:{cacheable:true},type:"base",statics:{all:{},register:function(b,a){var c=this.all;c[b.toUpperCase()]=c[b.toLowerCase()]=c[b]=a.prototype;}},onClassExtended:function(a,b){if(b.type){Ext.data.validator.Validator.register(b.type,a);
+}},constructor:function(a){if(typeof a==="function"){this.fnOnly=true;this.validate=a;}else{this.initConfig(a);}},validate:function(){return true;},clone:function(){var a=this;if(a.fnOnly){return new Ext.data.validator.Validator(a.validate);}return new a.self(a.getCurrentConfig());}},function(a){this.register(this.prototype.type,this);
+Ext.Factory.validator=Ext.Factory.dataValidator;});

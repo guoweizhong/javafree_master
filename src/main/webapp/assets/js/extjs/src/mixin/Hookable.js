@@ -1,0 +1,1 @@
+Ext.define("Ext.mixin.Hookable",{extend:"Ext.Mixin",mixinConfig:{id:"hookable"},bindHook:function(a,d,e,c,b){a.afterMethod(d,e||d,this,c,b);return this;},unbindHook:function(a,b,c){a.removeMethodListener(b,c||b,this);return this;}});

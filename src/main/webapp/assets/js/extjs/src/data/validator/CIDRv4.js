@@ -1,0 +1,1 @@
+Ext.define("Ext.data.validator.CIDRv4",{extend:"Ext.data.validator.Format",alias:"data.validator.cidrv4",type:"cidrv4",message:"Is not a valid CIDR block",matcher:/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([0-9]|[1-2][0-9]|3[0-2]))$/});

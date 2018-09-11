@@ -1,0 +1,1 @@
+Ext.define("Ext.data.summary.Sum",{extend:"Ext.data.summary.Base",alias:"data.summary.sum",calculate:function(c,j,g,b,d){var a=d-b,e,f,h;for(e=0;e<a;++e){h=this.extractValue(c[b+e],j,g);f=e?f+h:h;}return f;}});

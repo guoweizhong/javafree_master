@@ -1,0 +1,1 @@
+Ext.define("Ext.data.validator.Url",{extend:"Ext.data.validator.Format",alias:"data.validator.url",type:"url",message:"Is not a valid URL",matcher:/^(http:\/\/|https:\/\/|ftp:\/\/|\/\/)([-a-zA-Z0-9@:%_\+.~#?&//=])+$/});

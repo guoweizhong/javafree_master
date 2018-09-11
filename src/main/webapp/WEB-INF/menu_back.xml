@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *name:(必填项) /** 菜单名 唯一 不支持汉字 */ 
+action: url Action名或其它servlet名. 对于一些菜单控件也可以是javascript 
+	方法字符串 如ExtjBarTreeMenu 支持 action="javascript:location.href='/clickstreams.jsp'"*/ 
+	*toolTip: /** 菜单提示，*/ target: /** _blank _submit ,_ifram 名*/ *description:(必填项) 
+	/** 菜单描述*/ icon: /** icon 菜单项显示的图标*/ openIcon: /** 菜单展开后的图标*/ id: /** 菜单唯一标识*/ 
+	iconPath： /** 菜单图标 path*/ -->
+<MenuConfig>
+	<!--菜单显示类 -->
+	<Displayers>
+		<!--Bootstrap tree menu -->
+		<Displayer name="BootstrapTreeMenu"
+			type="com.javafree.navigator.displayer.BootstrapTreeMenuDisplayer" />
+			<!--Bootstrap main menu -->
+		<Displayer name="BootstrapMainMenu"
+			type="com.javafree.navigator.displayer.BootstrapMainMenuDisplayer" />
+	</Displayers>
+	<!--菜单数据区域 -->
+	<Menus>
+	 
+	 <Menu name="mainmenu" description="系统主导航菜单">
+	     <!--这里将openIcon指定子菜单，用于作为判断主菜单为活动的依据  ，可包括多个子菜单用逗号分开-->
+			 <Item name="ght_h" description="概化图1"  openIcon="system_menu_ght11,system_menu_ght" >
+						
+					<Item name="gcyx_menu_h" description="测试子菜单1"
+						action="mainHome?mainmenu=system_menu_ght11&amp;loadURL=userportal" iconCls="fa fa-video-camera"
+						target="_submit" />
+					<Item name="gcyx_menu_h" description="测试子菜单2"
+						action="mainHome?mainmenu=system_menu_ght&amp;loadURL=userportal" iconCls="fa fa-video-camera"
+						target="_submit" />
+					 						
+ 			 </Item>
+			<Item name="gcyx_menu_h" description="公共服务" openIcon="gcyx_menu"
+						action="mainHome?mainmenu=public_root&amp;loadURL=userportal"
+						target="_submit" />
+ 
+
+			<Item name="mainmenu_system_h" description="系统管理"   openIcon="system_menu"
+						action="mainHome?mainmenu=system_menu&amp;loadURL=userportal" 
+						target="_submit" />
+	 </Menu>
+	 <Menu name="system_menu" description="系统管理菜单">	
+			<Item name="mainmenu_userportal" description="个人桌面" action="userportal"
+				iconCls=" pink fa fa-dashboard" target="_load" />
+			<Item name="system_menu_admin" description="组织机构配置" iconCls=" fa fa-sitemap"  >
+					<Item name="mainmenu_orgset_orgcode" description="机构编码"
+						action="identity/orgcode/doGetOrgCodeList" iconCls="  fa fa-qrcode"
+						target="_load" />
+					<Item name="mainmenu_orgset_department" description="机构管理"
+						action="identity/department/doGetDepartmentList" iconCls=" red fa fa-sitemap"
+						target="_load" />
+					<Item name="mainmenu_orgset_user" description="用户管理"
+						action="identity/user/doGetUserList" iconCls=" green fa fa-user"
+						target="_load" />
+					<Item name="mainmenu_orgset_role" description="角色管理"
+						action="identity/role/doGetRoleList" iconCls=" purple fa fa-child"
+						target="_load" />
+					<Item name="mainmenu_orgset_group" description="组群管理"
+						action="identity/group/doGetGroupList" iconCls="blue fa fa-users"
+						target="_load" />
+				</Item>
+				<Item name="system_menu_security" description="授权管理" iconCls="purple fa fa-key"  >					
+					<Item name="system_menu_security_manager_menu" description="菜单管理"
+						iconCls=" blue fa fa-list-ul" action="security/resource/doGetResourceMenuList" />
+					<Item name="system_menu_security_manager_res" description="资源安全管理"
+						iconCls="red fa fa-list-alt" action="security/function/doGetResourceList" />	
+				</Item> 
+ 
+				
+				<Item name="system_test" description="示例" iconCls="red fa fa-desktop" >
+				
+				<Item name="mainmenu_userportal1" description="个人桌面1" action="userportal"
+				iconCls=" pink fa fa-dashboard" target="_loadTab" />
+				<Item name="mainmenu_userportal2" description="个人桌面2" action="userportal"
+				iconCls=" pink fa fa-dashboard" target="_loadTab" />
+					<Item name="testfontawesome_icons" description="百度"
+					action="http://www.baidu.com/"
+					target="_iframe" />
+					<Item name="testfontawesome_icons" description="百度Tab"
+					action="http://www.baidu.com/"
+					target="_iframeTab" />
+					<Item name="testiffontawesome_icons" description="凤凰"
+					action="http://www.ifeng.com/" iconCls=" blue fa fa-list-ul"
+					target="_iframeTab" />
+
+					<Item name="_iframeTab" description="_iframeTab"
+						  action="http://192.168.1.38/search/messageRmqHistoryList.jsp" iconCls=" blue fa fa-list-ul"
+						  target="_iframeTab" />
+					<Item name="_iframe" description="_iframe"
+						  action="http://192.168.1.38/search/messageRmqHistoryList.jsp" iconCls=" blue fa fa-list-ul"
+						  target="_iframe" />
+					<Item name="_load" description="_load"
+						  action="http://192.168.1.38/search/messageRmqHistoryList.jsp" iconCls=" blue fa fa-list-ul"
+						  target="_load" />
+					<Item name="_loadTab" description="_loadTab"
+						  action="http://192.168.1.38/search/messageRmqHistoryList.jsp" iconCls=" blue fa fa-list-ul"
+						  target="_loadTab" />
+					<Item name="_loadTab" description="_loadTab"
+						  action="http://192.168.1.38/search/messageRmqHistoryList.jsp" iconCls=" blue fa fa-list-ul"
+						  target="_loadTab" />
+					<Item name="_targetnull" description="_targetnull"
+						  action="http://192.168.1.38/search/messageRmqHistoryList.jsp" iconCls=" blue fa fa-list-ul"
+						   />
+					<Item name="_blank" description="_blank"
+						  action="http://192.168.1.38/search/messageRmqHistoryList.jsp" iconCls=" blue fa fa-list-ul"
+						  target="_blank" />
+				</Item>
+	 </Menu>
+	 
+	 <Menu name="system_menu_ght" description="测试2">	
+		 
+				
+				<Item name="system_menu_ghtsystem_testght" description="示例111" iconCls="red fa fa-desktop" >
+				<Item name="system_menu_ghtmainmenu_userportal1" description="个人桌面1" action="userportal"
+				iconCls=" pink fa fa-dashboard" target="_loadTab" />
+				 
+				</Item>
+			 
+	 </Menu>
+	 <Menu name="system_menu_ght11" description="测试1">	
+		 
+				
+				<Item name="system_menu_ghtsystem_testghtdd" description="示例111dsfds" iconCls="red fa fa-desktop" >
+				<Item name="system_menu_ghtmainmenu_userportaldd1" description="个人桌面d1" action="userportal"
+				iconCls=" pink fa fa-dashboard" target="_loadTab" />
+				 
+				</Item>
+			 
+	 </Menu>
+	 <Menu name="gcyx_menu" description="工程运行">	
+		 
+				
+				<Item name="gcyx_menu_ghtsystem_testght" description="工程运行" iconCls="red fa fa-desktop" >
+				<Item name="gcyx_menughtmainmenu_userportal1" description="个人桌面1" action="userportal"
+				iconCls=" pink fa fa-dashboard" target="_loadTab" />
+				 
+				</Item>
+			 
+	 </Menu>
+
+	</Menus>
+</MenuConfig>

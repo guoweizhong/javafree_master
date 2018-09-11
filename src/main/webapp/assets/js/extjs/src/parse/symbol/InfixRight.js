@@ -1,0 +1,1 @@
+Ext.define("Ext.parse.symbol.InfixRight",{extend:"Ext.parse.symbol.Infix",led:function(b){var a=this;a.lhs=b;a.rhs=a.parser.parseExpression(a.priority-1);a.arity="binary";a.isBinary=true;return a;}});

@@ -1,0 +1,1 @@
+Ext.define("Ext.parse.symbol.Infix",{extend:"Ext.parse.Symbol",arity:"binary",isBinary:true,defaultProperty:"priority",led:function(b){var a=this;a.lhs=b;a.rhs=a.parser.parseExpression(a.priority);a.arity="binary";a.isBinary=true;return a;}});

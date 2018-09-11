@@ -1,0 +1,2 @@
+Ext.define("Ext.sparkline.BarBase",{extend:"Ext.sparkline.Base",renderHighlight:function(a){this.renderRegion(a,true);},renderGraph:function(){var g=this,b=g.values,d=g.canvas,h=g.regionShapes||(g.regionShapes={}),a,f,e,c;if(!g.callParent()){return;}for(e=b.length;e--;){a=g.renderRegion(e);if(a){if(Ext.isArray(a)){f=[];
+for(c=a.length;c--;){a[c].append();f.push(a[c].id);}h[e]=f;}else{a.append();h[e]=a.id;}}else{h[e]=null;}}if(g.currentPageXY){g.currentRegion=null;g.updateDisplay();}d.render();}});

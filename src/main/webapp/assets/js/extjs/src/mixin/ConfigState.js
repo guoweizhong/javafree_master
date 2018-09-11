@@ -1,0 +1,2 @@
+Ext.define("Ext.mixin.ConfigState",{extend:"Ext.Mixin",mixinConfig:{id:"configstate"},alternateStateConfig:"",toggleConfigState:function(a){var d=this,e=d.capturedConfigState,b=d.getConfig(d.alternateStateConfig),c;if(!b){return;}if(a){e={};for(c in b){e[c]=d.getConfig(c);}d.capturedConfigState=e;d.setConfig(b);
+}else{if(!d.isConfiguring&&e){d.setConfig(e);delete d.capturedConfigState;}}}});

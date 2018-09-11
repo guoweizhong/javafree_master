@@ -1,0 +1,2 @@
+Ext.define("Ext.direct.Transaction",{alias:"direct.transaction",statics:{TRANSACTION_ID:0},constructor:function(a){var b=this;Ext.apply(b,a);b.id=b.tid=++b.self.TRANSACTION_ID;b.retryCount=0;},send:function(){var a=this;a.provider.queueTransaction(a);},retry:function(){var a=this;a.retryCount++;a.send();
+},getProvider:function(){return this.provider;}});

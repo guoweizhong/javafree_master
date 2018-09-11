@@ -1,0 +1,16 @@
+/*!
+ * Ext JS Library
+ * Copyright(c) 2006-2014 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+Ext.define("Ext.ux.desktop.TaskBar",{extend:"Ext.toolbar.Toolbar",requires:["Ext.button.Button","Ext.resizer.Splitter","Ext.menu.Menu","Ext.ux.desktop.StartMenu"],alias:"widget.taskbar",cls:"ux-taskbar",startBtnText:"Start",initComponent:function(){var a=this;
+a.startMenu=new Ext.ux.desktop.StartMenu(a.startConfig);a.quickStart=new Ext.toolbar.Toolbar(a.getQuickStart());a.windowBar=new Ext.toolbar.Toolbar(a.getWindowBarConfig());a.tray=new Ext.toolbar.Toolbar(a.getTrayConfig());a.items=[{xtype:"button",cls:"ux-start-button",iconCls:"ux-start-button-icon",menu:a.startMenu,menuAlign:"bl-tl",text:a.startBtnText},a.quickStart,{xtype:"splitter",html:"&#160;",height:14,width:2,cls:"x-toolbar-separator x-toolbar-separator-horizontal"},a.windowBar,"-",a.tray];
+a.callParent();},afterLayout:function(){var a=this;a.callParent();a.windowBar.el.on("contextmenu",a.onButtonContextMenu,a);},getQuickStart:function(){var b=this,a={minWidth:20,width:Ext.themeName==="neptune"?70:60,items:[],enableOverflow:true};Ext.each(this.quickStart,function(c){a.items.push({tooltip:{text:c.name,align:"bl-tl"},overflowText:c.name,iconCls:c.iconCls,module:c.module,handler:b.onQuickStartClick,scope:b});
+});return a;},getTrayConfig:function(){var a={items:this.trayItems};delete this.trayItems;return a;},getWindowBarConfig:function(){return{flex:1,cls:"ux-desktop-windowbar",items:["&#160;"],layout:{overflowHandler:"Scroller"}};},getWindowBtnFromEl:function(a){var b=this.windowBar.getChildByElement(a);
+return b||null;},onQuickStartClick:function(b){var a=this.app.getModule(b.module),c;if(a){c=a.createWindow();c.show();}},onButtonContextMenu:function(d){var c=this,b=d.getTarget(),a=c.getWindowBtnFromEl(b);if(a){d.stopEvent();c.windowMenu.theWin=a.win;c.windowMenu.showBy(b);}},onWindowBtnClick:function(a){var b=a.win;
+if(b.minimized||b.hidden){a.disable();b.show(null,function(){a.enable();});}else{if(b.active){a.disable();b.on("hide",function(){a.enable();},null,{single:true});b.minimize();}else{b.toFront();}}},addTaskButton:function(c){var a={iconCls:c.iconCls,enableToggle:true,toggleGroup:"all",width:140,margin:"0 2 0 3",text:Ext.util.Format.ellipsis(c.title,20),listeners:{click:this.onWindowBtnClick,scope:this},win:c};
+var b=this.windowBar.add(a);b.toggle(true);return b;},removeTaskButton:function(a){var c,b=this;b.windowBar.items.each(function(d){if(d===a){c=d;}return !c;});if(c){b.windowBar.remove(c);}return c;},setActiveButton:function(a){if(a){a.toggle(true);}else{this.windowBar.items.each(function(b){if(b.isButton){b.toggle(false);
+}});}}});Ext.define("Ext.ux.desktop.TrayClock",{extend:"Ext.toolbar.TextItem",alias:"widget.trayclock",cls:"ux-desktop-trayclock",html:"&#160;",timeFormat:"g:i A",tpl:"{time}",initComponent:function(){var a=this;a.callParent();if(typeof(a.tpl)=="string"){a.tpl=new Ext.XTemplate(a.tpl);}},afterRender:function(){var a=this;
+Ext.Function.defer(a.updateTime,100,a);a.callParent();},doDestroy:function(){var a=this;if(a.timer){window.clearTimeout(a.timer);a.timer=null;}a.callParent();},updateTime:function(){var a=this,b=Ext.Date.format(new Date(),a.timeFormat),c=a.tpl.apply({time:b});if(a.lastText!=c){a.setText(c);a.lastText=c;
+}a.timer=Ext.Function.defer(a.updateTime,10000,a);}});

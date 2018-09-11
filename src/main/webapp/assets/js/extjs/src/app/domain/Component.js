@@ -1,0 +1,2 @@
+Ext.define("Ext.app.domain.Component",{extend:"Ext.app.EventDomain",singleton:true,requires:["Ext.Widget"],type:"component",constructor:function(){this.callParent();this.monitor(Ext.Widget);},dispatch:function(f,d,c){var b=f.lookupController(false),e,a;while(b){e=b.compDomain;if(e){if(e.dispatch(f,d,c)===false){return false;
+}}a=b.getView();b=a?a.lookupController(true):null;}return this.callParent([f,d,c]);},match:function(b,a){return b.is(a);}});
